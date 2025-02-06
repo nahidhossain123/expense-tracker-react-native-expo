@@ -7,34 +7,34 @@ import * as Icons from 'phosphor-react-native'
 
 const CustomTabs = ({ state, descriptors, navigation }: BottomTabBarProps) => {
     const tabbarIcons: any = {
-        index: (isFocused: boolean) => {
+        index: (isFocused: boolean) => (
             <Icons.House
                 size={verticalScale(30)}
                 weight={isFocused ? 'fill' : 'regular'}
                 color={isFocused ? colors.primary : colors.neutral400}
             />
-        },
-        statistics: (isFocused: boolean) => {
+        ),
+        statistics: (isFocused: boolean) => (
             <Icons.ChartBar
                 size={verticalScale(30)}
                 weight={isFocused ? 'fill' : 'regular'}
-                color={isFocused ? colors.primary : 'red'}
+                color={isFocused ? colors.primary : colors.neutral400}
             />
-        },
-        wallet: (isFocused: boolean) => {
+        ),
+        wallet: (isFocused: boolean) => (
             <Icons.Wallet
                 size={verticalScale(30)}
                 weight={isFocused ? 'fill' : 'regular'}
                 color={isFocused ? colors.primary : colors.neutral400}
             />
-        },
-        profile: (isFocused: boolean) => {
+        ),
+        profile: (isFocused: boolean) => (
             <Icons.User
                 size={verticalScale(30)}
                 weight={isFocused ? 'fill' : 'regular'}
                 color={isFocused ? colors.primary : colors.neutral400}
             />
-        }
+        )
     }
     return (
         <View style={styles.tabbar}>
@@ -102,8 +102,9 @@ const styles = StyleSheet.create({
         borderTopWidth: 1
     },
     tabbarItme: {
+        flex: 1,
         marginBottom: Platform.OS == 'ios' ? spacingY._10 : spacingY._5,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     }
 })
